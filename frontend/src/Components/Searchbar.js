@@ -10,7 +10,7 @@ const Searchbar = ({ handleSearch }) => {
   };
 
   return (
-    <div>
+    <SearchbarContainer>
       <SearchInput
         type='text'
         placeholder='Search...'
@@ -19,15 +19,32 @@ const Searchbar = ({ handleSearch }) => {
           setSearchTerm(event.target.value)
         }}
       />
-      <SearchButton onClick={() => handleSearchedTerm(searchTerm)}>Search</SearchButton>
-    </div>
+      <SearchButton onClick={() => handleSearchedTerm(searchTerm)}>
+        Search
+      </SearchButton>
+    </SearchbarContainer>
   )
 }
 
 export default Searchbar;
 
+
+// STYLING --------------------------------------------------------
+const SearchbarContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #573280;
+
+  @media (min-width: 667px) {
+    justify-content: flex-start;
+    padding-left: 50px;
+  } 
+`;
+
 const SearchInput = styled.input`
-  width: 80%;
+  width: 60%;
+  margin: 20px 0;
   height: 40px;
   font-size: 16px;
   padding-left: 10px;
@@ -35,8 +52,8 @@ const SearchInput = styled.input`
   border: 1px #ccc6c6 solid;
   outline: none;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 20px 0;
-
+  box-sizing: border-box;
+  
   &::placeholder {
     color: #858181;
   }
@@ -50,15 +67,25 @@ const SearchInput = styled.input`
 `;
 
 const SearchButton = styled.button`
-  height: 44px;
+  width: 20%;
+  height: 40px;
   font-size: 16px;
   cursor: pointer;
-  background: rgb(198,226,255);
-  border: none;
+  background: #ADA8B6;
+  /* border: none; */
+  border: 1px #ccc6c6 solid;
+  border-left: none;
   border-radius: 0 4px 4px 0;
   outline: none;
 
   &:hover {
-    background: rgb(208,236,265);
+    background: #CECFC7;
+  }
+
+  @media (min-width: 667px) {
+    width: 10%;
+  }
+  @media (min-width: 1024px) {
+    width: 100px;
   }
 `;

@@ -18,6 +18,7 @@ const List = ({images}) => {
 
 export default List;
 
+// STYLING --------------------------------------------------------
 const StyledImage = styled.img`
   width: 80%;
   margin: 10px 0;
