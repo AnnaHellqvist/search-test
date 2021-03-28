@@ -4,13 +4,13 @@ import Searchbar from './Components/Searchbar';
 
 const App = () => {
   const [imageList, setImageList] = useState([]);
-  const searchTerm = '';
+  const [searchTerm, setSearchTerm] = useState('');
 
   const API_URL = `http://localhost:3000/api?s=${searchTerm}`;
 
   useEffect(() => {
     fetchImages();
-  }, []);
+  }, [searchTerm]);
 
   const fetchImages = () => {
     fetch(API_URL)
@@ -22,7 +22,7 @@ const App = () => {
   }
 
   const handleSearch = (word) => {
-    console.log(word);
+    setSearchTerm(word);
   }
 
   return (
