@@ -24,6 +24,11 @@ const App = () => {
   return (
     <div className="App">
       <Searchbar />
+      {imageList.map(image => {
+        return (
+          <img src={image.url} />
+        )
+      })}
     </div>
   );
 }
