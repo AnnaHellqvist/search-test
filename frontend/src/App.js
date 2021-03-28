@@ -19,13 +19,11 @@ const App = () => {
       .then(res => res.json())
       .then(json => {
         setImageList(json);
-        console.log(json);
       })
   }
 
   const handleSearch = (word) => {
     setSearchTerm(word);
-    console.log({ word })
   }
 
   return (

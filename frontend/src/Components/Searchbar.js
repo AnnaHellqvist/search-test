@@ -11,19 +11,19 @@ const Searchbar = ({ handleSearch }) => {
   };
 
   return (
-      <SearchForm>
-        <SearchInput
-          type='text'
-          placeholder='Search...'
-          onChange={event => setWord(event.target.value)}
-        />
-        <SearchButton
-          type='submit'
-          onClick={handleSearchedTerm}
-        >
-          Search
-        </SearchButton>
-      </SearchForm>
+    <SearchForm>
+      <SearchInput
+        type='text'
+        placeholder='Search...'
+        onChange={event => setWord(event.target.value)}
+      />
+      <SearchButton
+        type='submit'
+        onClick={handleSearchedTerm}
+      >
+        Search
+      </SearchButton>
+    </SearchForm>
   )
 }
 
