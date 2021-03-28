@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Searchbar from './Components/Searchbar';
 import List from './Components/List';
+import './App.css';
 
 const App = () => {
   const [imageList, setImageList] = useState([]);

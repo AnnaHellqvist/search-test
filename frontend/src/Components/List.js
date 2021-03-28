@@ -6,7 +6,10 @@ const List = ({images}) => {
     <ImageContainer>
       {images.map(image => {
         return (
-          <StyledImage key={image.url} src={image.url} />
+          <StyledImage
+            key={image.url}
+            src={image.url}
+          />
         )
       })}
     </ImageContainer>
