@@ -3,26 +3,27 @@ import styled from 'styled-components';
 
 const Searchbar = ({ handleSearch }) => {
 
-  const [searchTerm, setSearchTerm] = useState('');
+  const [word, setWord] = useState('');
 
-  const handleSearchedTerm = (word) => {
+  const handleSearchedTerm = (event) => {
+    event.preventDefault();
     handleSearch(word);
   };
 
   return (
-    <SearchbarContainer>
-      <SearchInput
-        type='text'
-        placeholder='Search...'
-        name='search'
-        onChange={event => {
-          setSearchTerm(event.target.value)
-        }}
-      />
-      <SearchButton onClick={() => handleSearchedTerm(searchTerm)}>
-        Search
-      </SearchButton>
-    </SearchbarContainer>
+      <SearchForm>
+        <SearchInput
+          type='text'
+          placeholder='Search...'
+          onChange={event => setWord(event.target.value)}
+        />
+        <SearchButton
+          type='submit'
+          onClick={handleSearchedTerm}
+        >
+          Search
+        </SearchButton>
+      </SearchForm>
   )
 }
 
@@ -30,7 +31,7 @@ export default Searchbar;
 
 
 // STYLING --------------------------------------------------------
-const SearchbarContainer = styled.div`
+const SearchForm = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;

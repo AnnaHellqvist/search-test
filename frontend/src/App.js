@@ -25,6 +25,7 @@ const App = () => {
 
   const handleSearch = (word) => {
     setSearchTerm(word);
+    console.log({ word })
   }
 
   return (
