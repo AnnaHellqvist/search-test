@@ -21,9 +21,13 @@ const App = () => {
       })
   }
 
+  const handleSearch = (word) => {
+    console.log(word);
+  }
+
   return (
     <div className="App">
-      <Searchbar />
+      <Searchbar handleSearch={handleSearch} />
       {imageList.map(image => {
         return (
           <img src={image.url} />
