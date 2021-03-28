@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Searchbar from './Components/Searchbar';
+import List from './Components/List';
 
 const App = () => {
   const [imageList, setImageList] = useState([]);
@@ -28,11 +29,7 @@ const App = () => {
   return (
     <div className="App">
       <Searchbar handleSearch={handleSearch} />
-      {imageList.map(image => {
-        return (
-          <img src={image.url} />
-        )
-      })}
+      <List images={imageList} />
     </div>
   );
 }
