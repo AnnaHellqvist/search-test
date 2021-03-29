@@ -20,11 +20,12 @@ const App = () => {
       .then(json => {
         setImageList(json);
       })
-  }
+      .catch(error => console.error(error))
+  };
 
   const handleSearch = (word) => {
     setSearchTerm(word);
-  }
+  };
 
   return (
     <div className="App">
